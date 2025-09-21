@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fraud Detection - Input</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Transaction Data</h2>
+        <form method="POST" action="{{ url_for('predict') }}">
+            <label>TX_DATETIME:</label>
+            <input type="text" name="TX_DATETIME" placeholder="YYYY-MM-DD HH:MM:SS" required>
+
+            <label>CUSTOMER_ID:</label>
+            <input type="text" name="CUSTOMER_ID" required>
+
+            <label>TERMINAL_ID:</label>
+            <input type="text" name="TERMINAL_ID" required>
+
+            <label>TX_AMOUNT:</label>
+            <input type="number" step="0.01" name="TX_AMOUNT" required>
+
+            <label>TX_TIME_SECONDS:</label>
+            <input type="number" name="TX_TIME_SECONDS" required>
+
+            <label>TX_TIME_DAYS:</label>
+            <input type="number" name="TX_TIME_DAYS" required>
+
+            <button type="submit">Predict Fraud</button>
+        </form>
+        <br>
+        <div style="text-align: center;">
+            <a href="{{ url_for('confusion_view') }}">View Confusion Matrix</a>
+        </div>
+    </div>
+</body>
+</html>

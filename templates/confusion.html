@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confusion Matrix</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container confusion-matrix">
+        <h2>Confusion Matrix</h2>
+        <img src="{{ plot_url }}" alt="Confusion Matrix">
+        <div style="margin-top: 20px;">
+            <a href="{{ url_for('index') }}">← Back to Input</a>
+        </div>
+    </div>
+</body>
+</html>

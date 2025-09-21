@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Fraud Prediction Result</h2>
+        <div class="result">
+            <p>Probability of Fraud: <b>{{ proba }}</b></p>
+            <p>
+                Prediction: 
+                {% if prediction == 1 %}
+                    <span class="fraud">Fraud</span>
+                {% else %}
+                    <span class="safe">Not Fraud</span>
+                {% endif %}
+            </p>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="{{ url_for('index') }}">← Back to Input</a>
+        </div>
+    </div>
+</body>
+</html>
